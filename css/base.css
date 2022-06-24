@@ -1,0 +1,15 @@
+:root {
+    --azul: #0D3B66;
+    --verde-claro: #6AB547;
+    --branco: #EBEBEB;
+    --verde-escuro: #17301c;
+    --verde-medio: #26532b;
+}
+
+[data-tema="escuro"] {
+    --azul: #fff;
+    --verde-claro: #fff;
+    --branco: #fff;
+    --verde-escuro: #fff;
+    --verde-medio: #fff;
+}
