@@ -1,3 +1,5 @@
+//TROCA TEMA 3-29
+
 const body = document.querySelector('body');
 
 function setTemaInicial() {
@@ -10,7 +12,6 @@ function setTemaInicial() {
 } 
 
 setTemaInicial();
-
 
 function setTema(tema) {
     localStorage.setItem('tema', tema);
@@ -26,3 +27,6 @@ function trocaTema() {
         setTema('claro');
     }
 }
+
+
+// FORM

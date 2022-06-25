@@ -6,27 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KaiQ - A Cura pelo Movimento</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://use.typekit.net/end0nye.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&family=Sansita+Swashed:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
+        <button onclick="trocaTema()" class="trocaTema">Troca Tema</button>
         <div class="wrapper-header">
-            <img src="" alt="">
-            <ul>
-                <li>Whatsapp</li>
-                <li>Instagram</li>
-                <!--<li>Contato</li>-->
-                <li>Cresça comigo!</li>
-            </ul>
+            <img src="assets/imgs/logo.png" alt="Logo KaiQ - A Cura pelo Movimento" class="header-logo">
+            <nav>
+                <ul>
+                    <a href="#">
+                        <li>Whatsapp</li>
+                    </a>
+                    <a href="#">
+                        <li>Instagram</li>
+                    </a>
+                    <!--<li>Contato</li>-->
+                    <a href="#">
+                        <li>Cresça comigo!</li>
+                    </a>
+                </ul>
+            </nav>
         </div>
     </header>
     <main>
         <div class="wrapper-main">
+            <section class="wrapper-form">
 
+            </section>
+            <section class="wrapper-table">
+                <h2>Meus pacientes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Peso(kg)</th>
+                            <th>Altura(m)</th>
+                            <th>Gordura Corporal(%)</th>
+                            <th>IMC</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-pacientes">
+                        <tr class="paciente" >
+                            <td class="info-nome">Paulo</td>
+                            <td class="info-peso">100</td>
+                            <td class="info-altura">2.00</td>
+                            <td class="info-gordura">10</td>
+                            <td class="info-imc">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </div>
     </main>
-    <button onclick="trocaTema()"></button>
     <footer>
         <div class="wrapper-footer">
             <p>A Cura pelo Movimento!</p>

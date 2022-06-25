@@ -1,3 +1,139 @@
 body {
     background-color: var(--verde-claro);
 }
+
+.trocaTema {
+    position: absolute;
+    top: 10vh;
+    left: 2.5vw;
+    width: 5vw;
+    height: 2vh;
+    transition: .3s;
+}
+
+.trocaTema:hover {
+    top: 9.75vh;
+    cursor: pointer;
+    width: 6vw;
+    left: 2vw;
+    transition: .3s;
+    height: 2.5vh;
+}
+
+header {
+    height: 5vh;
+    width: 100vw;
+    background-color: var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+}
+
+.header-logo {
+    height: 4.5vh;
+    top: 0.25vh;
+    transition: .3s;
+}
+
+.header-logo:hover {
+    height: 4.8vh;
+    cursor: pointer;
+    transition: .3s;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav ul li {
+    margin: 0 0 0 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--verde-escuro);
+    font-family: 'Passion One', cursive;
+    font-size: 1.2rem;
+
+}
+
+main {
+    height: 90vh;
+    width: 100vw;
+    background: linear-gradient(60deg, var(--verde-claro2), var(--verde-claro), var(--verde-claro2));
+    background-size: 400% 400%;
+    animation: background-animation 3s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-main {
+    width: 80vw;
+    height: auto;
+}
+
+.wrapper-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Passion;
+}
+
+h2 {
+    font-size: 2rem;
+    font-family: Piepie;
+    margin: 0 0 2rem 0;
+}
+
+footer {
+    height: 5vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--branco);
+}
+
+footer p {
+    font-family: Piepie;
+    font-size: 1.5rem;
+    letter-spacing: 18px;
+    color: var(--verde-escuro);
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes background-animation {
+    0% {
+        background-position: 0% 80%;
+    }
+    50% {
+        background-position: 80% 100%;
+    }
+    100% {
+        background-position: 0% 90%;
+    }
+}
