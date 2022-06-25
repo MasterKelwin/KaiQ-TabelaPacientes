@@ -5,19 +5,28 @@ body {
 .trocaTema {
     position: absolute;
     top: 10vh;
-    left: 2.5vw;
-    width: 5vw;
-    height: 2vh;
-    transition: .3s;
+    left: 2vw;
+    width: 6vw;
+    height: 2em;
+    background-color: var(--branco);
+    color: var(--verde-escuro);
+    border: none;
+    border-radius: 1em;
+    font-family: passion;
+    font-size: 1.2em;
+    transition: .4s ease-in-out;
 }
 
 .trocaTema:hover {
-    top: 9.75vh;
     cursor: pointer;
-    width: 6vw;
-    left: 2vw;
-    transition: .3s;
-    height: 2.5vh;
+    background-color: var(--verde-medio);
+    color: var(--branco);
+}
+
+
+form button:hover {
+    background-color: var(--verde-medio);
+    color: var(--branco);
 }
 
 header {
@@ -27,6 +36,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
 }
 
 .wrapper-header {
@@ -71,7 +81,7 @@ a {
 }
 
 main {
-    height: 90vh;
+    height: auto;
     width: 100vw;
     background: linear-gradient(60deg, var(--verde-claro2), var(--verde-claro), var(--verde-claro2));
     background-size: 400% 400%;
@@ -83,7 +93,107 @@ main {
 
 .wrapper-main {
     width: 80vw;
-    height: auto;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.wrapper-form {
+    background-color: var(--branco);
+    height: 35%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px;
+}
+
+.wrapper-form h2 {
+    margin: 0 0 .5em 0;
+    color: var(--verde-escuro);
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form button {
+    margin: 2em 0 0 0;
+    width: 25%;
+    height: 2em;
+    background-color: var(--verde-claro);
+    color: var(--verde-escuro);
+    border: none;
+    border-radius: 1em;
+    font-family: passion;
+    font-size: 1.2em;
+    transition: .4s ease-in-out;
+}
+
+form button:hover {
+    background-color: var(--verde-medio);
+    color: var(--branco);
+    cursor: pointer;
+}
+
+fieldset {
+    font-family: passion;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+input:placeholder-shown {
+    font-family: passion;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.input-container__inferior {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 93%;
+}
+
+#nome {
+    width: 100%;
+}
+
+#nome, #peso, #altura, #gorduraCorporal {
+    opacity: .5;
+    color: var(--cor-base);
+    background-color: var(--cor-secundaria);
+    font-weight: bolder;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    padding: 1.2rem .5rem .5rem;
+    height: 2.75rem;
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    font-size: 1.4em;
+    margin: .7em 0 0 0;
+}
+
+.input-container__inferior {
+    display: flex;
 }
 
 .wrapper-table {
@@ -101,6 +211,8 @@ h2 {
 }
 
 footer {
+    position: fixed;
+    top: 95vh;
     height: 5vh;
     width: 100vw;
     display: flex;
