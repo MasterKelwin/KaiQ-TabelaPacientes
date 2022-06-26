@@ -210,6 +210,26 @@ h2 {
     margin: 0 0 2rem 0;
 }
 
+table{
+	width: 100%;
+    table-layout: fixed;
+}
+
+td, th {
+	padding: .7rem;
+	border: 1px solid var(--verde-escuro);
+	text-align: center;
+    font-size: 1.2rem;
+    color: var(--verde-escuro);
+}
+
+th {
+	font-weight: bold;
+    background-color: var(--branco-transparente);
+    font-size: 1.5rem;
+}
+
+
 footer {
     position: fixed;
     top: 95vh;

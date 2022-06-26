@@ -5,14 +5,15 @@
     --branco: #EBEBEB;
     --verde-escuro: #17301c;
     --verde-medio: #26532b;
+    --branco-transparente: rgb(235, 235, 235, 0.75);
 }
 
 [data-tema="escuro"] {
     --azul: #0D3B66;
-    --verde-claro: #6AB547;
-    --verde-claro2: #afe994;
+    --verde-claro: #0a335a;
+    --verde-claro2: #17446d;
     --branco: #EBEBEB;
     --verde-escuro: #17301c;
-    --verde-medio: #26532b;;
+    --verde-medio: #26532b;
 }
 
