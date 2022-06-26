@@ -1,5 +1,6 @@
 body {
     background-color: var(--verde-claro);
+    overflow-x: hidden;
 }
 
 .trocaTema {
@@ -9,7 +10,7 @@ body {
     width: 6vw;
     height: 2em;
     background-color: var(--branco);
-    color: var(--verde-escuro);
+    color: var(--verde-escuro2);
     border: none;
     border-radius: 1em;
     font-family: passion;
@@ -23,12 +24,6 @@ body {
     color: var(--branco);
 }
 
-
-form button:hover {
-    background-color: var(--verde-medio);
-    color: var(--branco);
-}
-
 header {
     height: 5vh;
     width: 100vw;
@@ -37,6 +32,7 @@ header {
     justify-content: center;
     align-items: center;
     position: fixed;
+    z-index: 9999;
 }
 
 .wrapper-header {
@@ -74,7 +70,7 @@ header nav ul li {
 
 a {
     text-decoration: none;
-    color: var(--verde-escuro);
+    color: var(--verde-escuro2);
     font-family: 'Passion One', cursive;
     font-size: 1.2rem;
 
@@ -113,7 +109,7 @@ main {
 
 .wrapper-form h2 {
     margin: 0 0 .5em 0;
-    color: var(--verde-escuro);
+    color: var(--verde-escuro2);
 }
 
 form {
@@ -138,7 +134,7 @@ form button {
 }
 
 form button:hover {
-    background-color: var(--verde-medio);
+    background-color: var(--verde-escuro3);
     color: var(--branco);
     cursor: pointer;
 }
@@ -202,12 +198,15 @@ input:placeholder-shown {
     align-items: center;
     flex-direction: column;
     font-family: Passion;
+    height: 29vh;
+    max-height: 29vh;
 }
 
 h2 {
     font-size: 2rem;
     font-family: Piepie;
     margin: 0 0 2rem 0;
+    color: var(--verde-escuro);
 }
 
 table{
@@ -227,6 +226,7 @@ th {
 	font-weight: bold;
     background-color: var(--branco-transparente);
     font-size: 1.5rem;
+    color: var(--verde-escuro2);
 }
 
 
@@ -245,7 +245,8 @@ footer p {
     font-family: Piepie;
     font-size: 1.5rem;
     letter-spacing: 18px;
-    color: var(--verde-escuro);
+    color: var(--verde-escuro2);
+    z-index: 9998;
 }
 
 

@@ -4,6 +4,8 @@
     --verde-claro2: #afe994;
     --branco: #EBEBEB;
     --verde-escuro: #17301c;
+    --verde-escuro2: #17301c;
+    --verde-escuro3: #17301c;
     --verde-medio: #26532b;
     --branco-transparente: rgb(235, 235, 235, 0.75);
 }
@@ -13,7 +15,9 @@
     --verde-claro: #0a335a;
     --verde-claro2: #17446d;
     --branco: #EBEBEB;
-    --verde-escuro: #17301c;
+    --verde-escuro: #ebebeb;
+    --verde-escuro2: #0D3B66;
+    --verde-escuro3: #366fa5;
     --verde-medio: #26532b;
 }
 
