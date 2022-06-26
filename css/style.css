@@ -3,6 +3,18 @@ body {
     overflow-x: hidden;
 }
 
+body::-webkit-scrollbar{
+    width: 5px;
+    border: 1px solid var(--verde-escuro);
+    z-index: 10;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: var(--verde-escuro2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
 .trocaTema {
     position: absolute;
     top: 10vh;
@@ -89,7 +101,7 @@ main {
 
 .wrapper-main {
     width: 80vw;
-    height: 95vh;
+    height: 90vh;
     position: absolute;
     top: 10vh;
 }
