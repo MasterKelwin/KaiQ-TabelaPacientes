@@ -58,23 +58,29 @@ function valida (peso, altura, imc, alturaDOM, pesoDOM) {
 
 // CALCULA IMC
 
-const pacientes = document.querySelectorAll('.paciente');
+var pacientes = document.querySelectorAll('.paciente');
 var imcCalculado;
 
 function calculaIMC(peso, altura) {
     return imcCalculado = peso / (altura * altura)
 }
 
-for (i = 0; i < pacientes.length; i++) {
-    var pesoDOM = pacientes[i].querySelector('.info-peso');
-    var alturaDOM = pacientes[i].querySelector('.info-altura');
-
-    const peso = parseFloat(pesoDOM.textContent);
-    const altura = parseFloat(alturaDOM.textContent);
-    const imc = pacientes[i].querySelector('.info-imc');
-
-    valida(peso, altura, imc, alturaDOM, pesoDOM);       
+function banana () {
+    for (i = 0; i < pacientes.length; i++) {
+        var pesoDOM = pacientes[i].querySelector('.info-peso');
+        var alturaDOM = pacientes[i].querySelector('.info-altura');
+    
+        const peso = parseFloat(pesoDOM.textContent);
+        const altura = parseFloat(alturaDOM.textContent);
+        const imc = pacientes[i].querySelector('.info-imc');
+    
+        valida(peso, altura, imc, alturaDOM, pesoDOM);       
+    }
 }
+
+banana();
+
+
 
 
 
@@ -89,12 +95,11 @@ const inputGordura = document.querySelector('#gorduraCorporal');
 
 
 function adiciona () {
-    console.log("oi")
-    var nome = inputNome.textContent;
+    var nome = inputNome.value;
     var peso = inputPeso.value;
     var altura = inputAltura.value;
     var gorduraCorporal = inputGordura.value;
-
+    console.log(nome);
 
     geraHTML(nome, peso, altura, gorduraCorporal);
     
@@ -103,6 +108,7 @@ function adiciona () {
 function geraHTML (nome, peso, altura, gordura) {
     const tabela = document.querySelector('#tabela-pacientes');
     const novoPaciente = document.createElement("tr");
+    novoPaciente.classList.add('paciente');
     tabela.appendChild(novoPaciente);
 
     novoPaciente.classList.add('paciente');
@@ -129,8 +135,22 @@ function geraHTML (nome, peso, altura, gordura) {
     pacienteGordura.classList.add("info-gordura");
     pacienteGordura.textContent = gordura;
     novoPaciente.appendChild(pacienteGordura);
+    
+    pacientes = document.querySelectorAll('.paciente');
+    
+    banana();
+    calculaIMC(peso, altura)
+    renderizaIMC(imcCalculado, novoPaciente);
+    console.log(novoPaciente);
+    console.log(pacientes);
 }
-
+ 
+function renderizaIMC (imcCalculado, novoPaciente) {
+    const pacienteIMC = document.createElement("td");
+    pacienteIMC.classList.add("info-IMC");
+    pacienteIMC.textContent = imcCalculado;
+    novoPaciente.appendChild(pacienteIMC);
+}
 
 
 
