@@ -1,4 +1,4 @@
-//TROCA TEMA 3-29
+//TROCA TEMA
 
 const body = document.querySelector('body');
 
@@ -82,17 +82,13 @@ verificaECalcula();
 
 
 
-
-
 // CADASTRA ALUNO
-
 
 var formulario = document.querySelector('#form');
 const inputNome = document.querySelector('#nome');
 const inputPeso = document.querySelector('#peso');
 const inputAltura = document.querySelector('#altura');
 const inputGordura = document.querySelector('#gorduraCorporal');
-
 
 function adiciona () {
     var nome = inputNome.value;
@@ -102,12 +98,10 @@ function adiciona () {
 
     geraHTML(nome, peso, altura, gorduraCorporal);
     var verificador = false;
-    if(!pepino) {
+    if(!verificador) {
         verificaECalcula();
         verificador = true;
-    }
-    
-    
+    }   
 }
 
 function geraHTML (nome, peso, altura, gordura) {
@@ -115,34 +109,29 @@ function geraHTML (nome, peso, altura, gordura) {
     const novoPaciente = document.createElement("tr");
     novoPaciente.classList.add('paciente');
     tabela.appendChild(novoPaciente);
-
     novoPaciente.classList.add('paciente');
 
     const pacienteNome = document.createElement("td");
     pacienteNome.classList.add("info-nome");
     pacienteNome.textContent = nome;
     novoPaciente.appendChild(pacienteNome);
-
     
     const pacientePeso = document.createElement("td");
     pacientePeso.classList.add("info-peso");
     pacientePeso.textContent = peso;
     novoPaciente.appendChild(pacientePeso);
-
     
     const pacienteAltura = document.createElement("td");
     pacienteAltura.classList.add("info-altura");
     pacienteAltura.textContent = altura;
     novoPaciente.appendChild(pacienteAltura);
-
     
     const pacienteGordura = document.createElement("td");
     pacienteGordura.classList.add("info-gordura");
     pacienteGordura.textContent = gordura;
     novoPaciente.appendChild(pacienteGordura);
     
-    pacientes = document.querySelectorAll('.paciente');
-    
+    pacientes = document.querySelectorAll('.paciente');    
     
     calculaIMC(peso, altura)
     renderizaIMC(imcCalculado, novoPaciente);
@@ -154,6 +143,3 @@ function renderizaIMC (imcCalculado, novoPaciente) {
     pacienteIMC.textContent = imcCalculado;
     novoPaciente.appendChild(pacienteIMC);
 }
-
-
-
