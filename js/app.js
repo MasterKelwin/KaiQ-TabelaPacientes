@@ -80,10 +80,13 @@ for (i = 0; i < pacientes.length; i++) {
 
 // CADASTRA ALUNO
 
+
+var formulario = document.querySelector('#form');
 const inputNome = document.querySelector('#nome');
 const inputPeso = document.querySelector('#peso');
 const inputAltura = document.querySelector('#altura');
 const inputGordura = document.querySelector('#gorduraCorporal');
+
 
 function adiciona () {
     console.log("oi")

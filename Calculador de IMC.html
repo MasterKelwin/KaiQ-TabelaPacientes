@@ -38,7 +38,7 @@
         <div class="wrapper-main">
             <section class="wrapper-form">
                 <h2>Cadastre seu Aluno</h2>
-                <form>
+                <form onsubmit="return false" id="form">
                     <fieldset>
                         <div class="input-container">
                             <input name="nome" id="nome" class="input" type="text" placeholder="Nome" data-tipo="nome" autocomplete="off" required>
@@ -54,7 +54,7 @@
                                 <input name="gorduraCorporal" id="gorduraCorporal" class="input" type="number" placeholder="Gordura Corporal(%)" data-tipo="gorduraCorporal" autocomplete="off" required>
                             </div>  
                     </fieldset>
-                    <button onclick="adiciona()">Cadastrar</a>
+                    <button onclick="adiciona()" type="submit">Cadastrar</a>
                 </form>
             </section>
             <section class="wrapper-table">
