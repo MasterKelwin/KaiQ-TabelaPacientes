@@ -78,3 +78,56 @@ for (i = 0; i < pacientes.length; i++) {
 
 
 
+// CADASTRA ALUNO
+
+const inputNome = document.querySelector('#nome');
+const inputPeso = document.querySelector('#peso');
+const inputAltura = document.querySelector('#altura');
+const inputGordura = document.querySelector('#gorduraCorporal');
+
+function adiciona () {
+    console.log("oi")
+    var nome = inputNome.textContent;
+    var peso = inputPeso.value;
+    var altura = inputAltura.value;
+    var gorduraCorporal = inputGordura.value;
+
+
+    geraHTML(nome, peso, altura, gorduraCorporal);
+    
+}
+
+function geraHTML (nome, peso, altura, gordura) {
+    const tabela = document.querySelector('#tabela-pacientes');
+    const novoPaciente = document.createElement("tr");
+    tabela.appendChild(novoPaciente);
+
+    novoPaciente.classList.add('paciente');
+
+    const pacienteNome = document.createElement("td");
+    pacienteNome.classList.add("info-nome");
+    pacienteNome.textContent = nome;
+    novoPaciente.appendChild(pacienteNome);
+
+    
+    const pacientePeso = document.createElement("td");
+    pacientePeso.classList.add("info-peso");
+    pacientePeso.textContent = peso;
+    novoPaciente.appendChild(pacientePeso);
+
+    
+    const pacienteAltura = document.createElement("td");
+    pacienteAltura.classList.add("info-altura");
+    pacienteAltura.textContent = altura;
+    novoPaciente.appendChild(pacienteAltura);
+
+    
+    const pacienteGordura = document.createElement("td");
+    pacienteGordura.classList.add("info-gordura");
+    pacienteGordura.textContent = gordura;
+    novoPaciente.appendChild(pacienteGordura);
+}
+
+
+
+
