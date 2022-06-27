@@ -65,20 +65,20 @@ function calculaIMC(peso, altura) {
     return imcCalculado = peso / (altura * altura)
 }
 
-function banana () {
+function verificaECalcula () {
     for (i = 0; i < pacientes.length; i++) {
         var pesoDOM = pacientes[i].querySelector('.info-peso');
         var alturaDOM = pacientes[i].querySelector('.info-altura');
     
-        const peso = parseFloat(pesoDOM.textContent);
-        const altura = parseFloat(alturaDOM.textContent);
-        const imc = pacientes[i].querySelector('.info-imc');
-    
+        var peso = parseFloat(pesoDOM.textContent);
+        var altura = parseFloat(alturaDOM.textContent);
+        var imc = pacientes[i].querySelector('.info-imc');
+        
         valida(peso, altura, imc, alturaDOM, pesoDOM);       
     }
 }
 
-banana();
+verificaECalcula();
 
 
 
@@ -99,9 +99,14 @@ function adiciona () {
     var peso = inputPeso.value;
     var altura = inputAltura.value;
     var gorduraCorporal = inputGordura.value;
-    console.log(nome);
 
     geraHTML(nome, peso, altura, gorduraCorporal);
+    var pepino = false;
+    if(!pepino) {
+        verificaECalcula();
+        pepino = true;
+    }
+    
     
 }
 
@@ -138,16 +143,14 @@ function geraHTML (nome, peso, altura, gordura) {
     
     pacientes = document.querySelectorAll('.paciente');
     
-    banana();
+    
     calculaIMC(peso, altura)
     renderizaIMC(imcCalculado, novoPaciente);
-    console.log(novoPaciente);
-    console.log(pacientes);
 }
  
 function renderizaIMC (imcCalculado, novoPaciente) {
     const pacienteIMC = document.createElement("td");
-    pacienteIMC.classList.add("info-IMC");
+    pacienteIMC.classList.add("info-imc");
     pacienteIMC.textContent = imcCalculado;
     novoPaciente.appendChild(pacienteIMC);
 }
