@@ -101,10 +101,10 @@ function adiciona () {
     var gorduraCorporal = inputGordura.value;
 
     geraHTML(nome, peso, altura, gorduraCorporal);
-    var pepino = false;
+    var verificador = false;
     if(!pepino) {
         verificaECalcula();
-        pepino = true;
+        verificador = true;
     }
     
     
