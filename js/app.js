@@ -30,23 +30,51 @@ function trocaTema() {
 
 
 
+// VALIDA IMC
+
+function valida (peso, altura, imc, alturaDOM, pesoDOM) {
+    if(peso > 0 && peso < 400 && altura > 0.5 && altura < 3) {
+        calculaIMC(peso, altura);
+        imc.textContent = imcCalculado.toFixed(2);
+        alturaDOM.classList.remove('dadoInvalido');
+        pesoDOM.classList.remove('dadoInvalido');
+        imc.classList.remove('dadoInvalido');
+    }
+
+    if(altura < 0.5 || altura > 3) {
+        alturaDOM.textContent = "Altura Inválida";
+        alturaDOM.classList.add('dadoInvalido');
+        imc.classList.add('dadoInvalido');
+    }   
+
+    if(peso <= 0 || peso > 400) {
+        pesoDOM.textContent = "Peso Inválido";
+        pesoDOM.classList.add('dadoInvalido');
+        imc.classList.add('dadoInvalido');
+    } 
+}
+
+
+
 // CALCULA IMC
 
 const pacientes = document.querySelectorAll('.paciente');
 var imcCalculado;
-console.log(pacientes);
 
 function calculaIMC(peso, altura) {
     return imcCalculado = peso / (altura * altura)
 }
 
 for (i = 0; i < pacientes.length; i++) {
-    const peso = parseFloat((pacientes[i].querySelector('.info-peso')).textContent);
-    const altura = parseFloat((pacientes[i].querySelector('.info-altura')).textContent);
-    var imc = pacientes[i].querySelector('.info-imc');
+    var pesoDOM = pacientes[i].querySelector('.info-peso');
+    var alturaDOM = pacientes[i].querySelector('.info-altura');
 
-    calculaIMC(peso, altura);
-    imc.textContent = imcCalculado.toFixed(2);
-    console.log(imc);
+    const peso = parseFloat(pesoDOM.textContent);
+    const altura = parseFloat(alturaDOM.textContent);
+    const imc = pacientes[i].querySelector('.info-imc');
+
+    valida(peso, altura, imc, alturaDOM, pesoDOM);       
 }
+
+
 

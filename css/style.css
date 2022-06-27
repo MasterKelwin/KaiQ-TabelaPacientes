@@ -240,6 +240,10 @@ th {
     color: var(--verde-escuro2);
 }
 
+.dadoInvalido {
+    background-color: rgb(236, 103, 103);
+}
+
 
 footer {
     position: fixed;
