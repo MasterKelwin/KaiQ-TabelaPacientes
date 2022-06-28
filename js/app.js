@@ -42,15 +42,29 @@ function valida (peso, altura, imc, alturaDOM, pesoDOM) {
     }
 
     if(altura < 0.5 || altura > 3) {
+        imc.textContent = "Dados inválidos";
         alturaDOM.textContent = "Altura Inválida";
         alturaDOM.classList.add('dadoInvalido');
         imc.classList.add('dadoInvalido');
+
+        setTimeout(() => {  //RESPONSÁVEL POR CORRIGIR
+            var alturaCorrigida = parseFloat(prompt("Altura inválida, informe novamente"));
+            valida(peso, alturaCorrigida, imc, alturaDOM, pesoDOM);
+            alturaDOM.textContent = alturaCorrigida;
+        }, 1000);
     }   
 
     if(peso <= 0 || peso > 400) {
+        imc.textContent = "Dados inválidos";
         pesoDOM.textContent = "Peso Inválido";
         pesoDOM.classList.add('dadoInvalido');
         imc.classList.add('dadoInvalido');
+
+        setTimeout(() => {  //RESPONSÁVEL POR CORRIGIR
+            var pesoCorrigido = parseFloat(prompt("Peso inválido, informe novamente"));
+            valida(pesoCorrigido, altura, imc, alturaDOM, pesoDOM);
+            pesoDOM.textContent = pesoCorrigido;
+        }, 1000);
     } 
 }
 
