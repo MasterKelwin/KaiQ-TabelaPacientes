@@ -32,6 +32,8 @@ function trocaTema() {
 
 // VALIDA IMC
 
+var corrigiu = false;
+
 function valida (peso, altura, imc, alturaDOM, pesoDOM) {
     if(peso > 0 && peso < 400 && altura > 0.5 && altura < 3) {
         calculaIMC(peso, altura);
@@ -41,21 +43,26 @@ function valida (peso, altura, imc, alturaDOM, pesoDOM) {
         pesoDOM.textContent = peso;
         imc.classList.remove('dadoInvalido');
         imc.textContent = imcCalculado.toFixed(2);
+        if (!corrigiu) {
+            palpita(corrigiu);
+        }
 
-        palpita(imcCalculado, pacientes[i]);
     }
 
-    if(altura < 0.5 || altura > 3) {
+    if(altura < 0.5 || altura >2.9) {
         imc.textContent = "Dados inválidos";
         alturaDOM.textContent = "Altura Inválida";
         alturaDOM.classList.add('dadoInvalido');
         imc.classList.add('dadoInvalido');
+        pacientes[i].classList.add('errou');
 
         setTimeout(() => {  //RESPONSÁVEL POR CORRIGIR
-            var alturaCorrigida = parseFloat(prompt("Altura inválida, informe novamente"));
-            valida(peso, alturaCorrigida, imc, alturaDOM, pesoDOM);
+            var alturaCorrigida = parseFloat(prompt("Altura inválida, informe novamente. Digite '.' ao invés de ','"));
+            calculaIMC(peso, alturaCorrigida);
             alturaDOM.textContent = alturaCorrigida;
-        }, 1000);
+            corrigiu = true;
+            palpita(corrigiu);
+        }, 500);
     }   
 
     if(peso <= 0 || peso > 400) {
@@ -63,12 +70,15 @@ function valida (peso, altura, imc, alturaDOM, pesoDOM) {
         pesoDOM.textContent = "Peso Inválido";
         pesoDOM.classList.add('dadoInvalido');
         imc.classList.add('dadoInvalido');
+        pacientes[i].classList.add('errou');
 
         setTimeout(() => {  //RESPONSÁVEL POR CORRIGIR
-            var pesoCorrigido = parseFloat(prompt("Peso inválido, informe novamente"));
-            valida(pesoCorrigido, altura, imc, alturaDOM, pesoDOM);
+            var pesoCorrigido = parseFloat(prompt("Peso inválido, informe novamente. Digite '.' ao invés de ','"));
+            calculaIMC(pesoCorrigido, altura);
             pesoDOM.textContent = pesoCorrigido;
-        }, 1000);
+            corrigiu = true;
+            palpita(corrigiu);
+        }, 500);
     } 
 }
 
@@ -113,7 +123,7 @@ function adiciona () {
     var nome = inputNome.value;
     var peso = inputPeso.value;
     var altura = inputAltura.value;
-    var gorduraCorporal = inputGordura.value;
+    var gorduraCorporal = inputGordura.value;   
 
     geraHTML(nome, peso, altura, gorduraCorporal);
     var verificador = false;
@@ -159,13 +169,45 @@ function geraHTML (nome, peso, altura, gordura) {
 
 // PALPITA
 
-function palpita(imcCalculado, pacienteAnalisado) {
-
-    if(imcCalculado > 18.5 && imcCalculado < 25.1){
-        pacienteAnalisado.classList.add('palpite-saudavel');
-    } else if(imcCalculado > 15 && imcCalculado < 30) {
-        pacienteAnalisado.classList.add('palpite-insaudavel');
+function palpita(verificador) {
+    if(!verificador) {
+        if(imcCalculado > 18.5 && imcCalculado < 25.1){
+            pacientes[i].classList.add('palpite-saudavel');
+        } else if(imcCalculado > 15 && imcCalculado < 30) {
+            pacientes[i].classList.add('palpite-insaudavel');
+        } else {
+            pacientes[i].classList.add('palpite-muito-insaudavel');
+        }
     } else {
-        pacienteAnalisado.classList.add('palpite-muito-insaudavel');
+        var pacientesCorrigido = document.querySelectorAll('.errou');
+        for (i = 0; i < pacientesCorrigido.length; i++) {
+
+            var imcCorrigido = pacientesCorrigido[i].querySelector('.info-imc');
+            var pesoCorrigido = parseFloat((pacientesCorrigido[i].querySelector('.info-peso')).textContent);
+            var alturaCorrigida = parseFloat((pacientesCorrigido[i].querySelector('.info-altura')).textContent);
+              
+            calculaIMC(pesoCorrigido, alturaCorrigida);        
+            imcCorrigido.textContent = imcCalculado.toFixed(2);
+
+            if(imcCalculado > 18.5 && imcCalculado < 25.1){
+                pacientesCorrigido[i].classList.add('palpite-saudavel');
+                
+            } else if(imcCalculado > 15 && imcCalculado < 30) {
+                pacientesCorrigido[i].classList.add('palpite-insaudavel');
+            } else {
+                pacientesCorrigido[i].classList.add('palpite-muito-insaudavel');
+            }
+
+            var pesoDOM = pacientesCorrigido[i].querySelector('.info-peso');
+            var alturaDOM = pacientesCorrigido[i].querySelector('.info-altura');
+            var imc = pacientesCorrigido[i].querySelector('.info-imc');
+
+            alturaDOM.classList.remove('dadoInvalido');
+            pesoDOM.classList.remove('dadoInvalido');
+            imc.classList.remove('dadoInvalido');
+
+            corrigiu = false;     
+        }
     }
+    corrigiu = false;   
 }
