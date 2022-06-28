@@ -269,7 +269,17 @@ footer p {
 
 
 
+.palpite-saudavel {
+    background-color: rgb(57, 179, 0);
+}
 
+.palpite-insaudavel {
+    background-color: rgb(208, 226, 42);
+}
+
+.palpite-muito-insaudavel {
+    background-color: rgb(226, 70, 42);
+}
 
 
 

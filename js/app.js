@@ -35,10 +35,14 @@ function trocaTema() {
 function valida (peso, altura, imc, alturaDOM, pesoDOM) {
     if(peso > 0 && peso < 400 && altura > 0.5 && altura < 3) {
         calculaIMC(peso, altura);
-        imc.textContent = imcCalculado.toFixed(2);
         alturaDOM.classList.remove('dadoInvalido');
+        alturaDOM.textContent = altura;
         pesoDOM.classList.remove('dadoInvalido');
+        pesoDOM.textContent = peso;
         imc.classList.remove('dadoInvalido');
+        imc.textContent = imcCalculado.toFixed(2);
+
+        palpita(imcCalculado, pacientes[i]);
     }
 
     if(altura < 0.5 || altura > 3) {
@@ -143,7 +147,7 @@ function geraHTML (nome, peso, altura, gordura) {
             elemento[i].textContent = conteudo[i]; 
         } else {
             calculaIMC(peso, altura);
-            elemento[4].textContent = imcCalculado;
+            elemento[i].textContent = imcCalculado;
         }        
         novoPaciente.appendChild(elemento[i]);  
     }
@@ -151,3 +155,17 @@ function geraHTML (nome, peso, altura, gordura) {
     pacientes = document.querySelectorAll('.paciente');    
 }
  
+
+
+// PALPITA
+
+function palpita(imcCalculado, pacienteAnalisado) {
+
+    if(imcCalculado > 18.5 && imcCalculado < 25.1){
+        pacienteAnalisado.classList.add('palpite-saudavel');
+    } else if(imcCalculado > 15 && imcCalculado < 30) {
+        pacienteAnalisado.classList.add('palpite-insaudavel');
+    } else {
+        pacienteAnalisado.classList.add('palpite-muito-insaudavel');
+    }
+}
