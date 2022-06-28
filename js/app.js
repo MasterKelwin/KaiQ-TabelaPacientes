@@ -121,7 +121,7 @@ function geraHTML (nome, peso, altura, gordura) {
     var propriedadeClass = ["info-nome", "info-peso", "info-altura", "info-gordura", "info-imc"];
     var conteudo = [nome, peso, altura, gordura];
     
-    for (i = 0; i < adicionados; i++) {  
+    for (i = 0; i < 5; i++) {  
         adicionados++;
         elemento[i].classList.add(propriedadeClass[i]);
 

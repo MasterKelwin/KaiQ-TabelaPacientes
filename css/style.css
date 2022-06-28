@@ -210,7 +210,10 @@ input:placeholder-shown {
     align-items: center;
     flex-direction: column;
     font-family: Passion;
+}
 
+table {
+    margin-bottom: 7vh;
 }
 
 h2 {
