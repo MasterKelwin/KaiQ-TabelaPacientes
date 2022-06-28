@@ -125,7 +125,7 @@ function geraHTML (nome, peso, altura, gordura) {
         adicionados++;
         elemento[i].classList.add(propriedadeClass[i]);
 
-        if (conteudo < 4) {
+        if (i < 4) {
             elemento[i].textContent = conteudo[i]; 
         } else {
             calculaIMC(peso, altura);
