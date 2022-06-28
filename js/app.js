@@ -133,37 +133,7 @@ function geraHTML (nome, peso, altura, gordura) {
         }        
         novoPaciente.appendChild(elemento[i]);  
     }
-
-    //function renderizaIMC (imcCalculado, novoPaciente) {
-    //    const pacienteIMC = document.createElement("td");
-    //    pacienteIMC.classList.add("info-imc");
-    //    pacienteIMC.textContent = imcCalculado;
-    //    novoPaciente.appendChild(pacienteIMC);
-    //}
-
-    //const pacienteNome = document.createElement("td");
-    //pacienteNome.classList.add("info-nome");
-    //pacienteNome.textContent = nome;
-    //novoPaciente.appendChild(pacienteNome);
-    
-    //const pacientePeso = document.createElement("td");
-    //pacientePeso.classList.add("info-peso");
-    //pacientePeso.textContent = peso;
-    //novoPaciente.appendChild(pacientePeso);
-    
-    //const pacienteAltura = document.createElement("td");
-    //pacienteAltura.classList.add("info-altura");
-    //pacienteAltura.textContent = altura;
-    //novoPaciente.appendChild(pacienteAltura);
-    
-    //const pacienteGordura = document.createElement("td");
-    //pacienteGordura.classList.add("info-gordura");
-    //pacienteGordura.textContent = gordura;
-    //novoPaciente.appendChild(pacienteGordura);
-    
+      
     pacientes = document.querySelectorAll('.paciente');    
-    
-    // calculaIMC(peso, altura)
-    // renderizaIMC(imcCalculado, novoPaciente);
 }
  
