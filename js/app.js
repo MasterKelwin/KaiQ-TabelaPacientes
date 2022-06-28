@@ -89,6 +89,7 @@ const inputNome = document.querySelector('#nome');
 const inputPeso = document.querySelector('#peso');
 const inputAltura = document.querySelector('#altura');
 const inputGordura = document.querySelector('#gorduraCorporal');
+var adicionados = 1;
 
 function adiciona () {
     var nome = inputNome.value;
@@ -112,34 +113,57 @@ function geraHTML (nome, peso, altura, gordura) {
     novoPaciente.classList.add('paciente');
 
     const pacienteNome = document.createElement("td");
-    pacienteNome.classList.add("info-nome");
-    pacienteNome.textContent = nome;
-    novoPaciente.appendChild(pacienteNome);
-    
     const pacientePeso = document.createElement("td");
-    pacientePeso.classList.add("info-peso");
-    pacientePeso.textContent = peso;
-    novoPaciente.appendChild(pacientePeso);
-    
     const pacienteAltura = document.createElement("td");
-    pacienteAltura.classList.add("info-altura");
-    pacienteAltura.textContent = altura;
-    novoPaciente.appendChild(pacienteAltura);
-    
     const pacienteGordura = document.createElement("td");
-    pacienteGordura.classList.add("info-gordura");
-    pacienteGordura.textContent = gordura;
-    novoPaciente.appendChild(pacienteGordura);
+    const pacienteIMC = document.createElement("td");
+    var elemento = [pacienteNome, pacientePeso, pacienteAltura, pacienteGordura, pacienteIMC];
+    var propriedadeClass = ["info-nome", "info-peso", "info-altura", "info-gordura", "info-imc"];
+    var conteudo = [nome, peso, altura, gordura];
+    
+    for (i = 0; i < adicionados; i++) {  
+        adicionados++;
+        elemento[i].classList.add(propriedadeClass[i]);
+
+        if (conteudo < 4) {
+            elemento[i].textContent = conteudo[i]; 
+        } else {
+            calculaIMC(peso, altura);
+            elemento[4].textContent = imcCalculado;
+        }        
+        novoPaciente.appendChild(elemento[i]);  
+    }
+
+    //function renderizaIMC (imcCalculado, novoPaciente) {
+    //    const pacienteIMC = document.createElement("td");
+    //    pacienteIMC.classList.add("info-imc");
+    //    pacienteIMC.textContent = imcCalculado;
+    //    novoPaciente.appendChild(pacienteIMC);
+    //}
+
+    //const pacienteNome = document.createElement("td");
+    //pacienteNome.classList.add("info-nome");
+    //pacienteNome.textContent = nome;
+    //novoPaciente.appendChild(pacienteNome);
+    
+    //const pacientePeso = document.createElement("td");
+    //pacientePeso.classList.add("info-peso");
+    //pacientePeso.textContent = peso;
+    //novoPaciente.appendChild(pacientePeso);
+    
+    //const pacienteAltura = document.createElement("td");
+    //pacienteAltura.classList.add("info-altura");
+    //pacienteAltura.textContent = altura;
+    //novoPaciente.appendChild(pacienteAltura);
+    
+    //const pacienteGordura = document.createElement("td");
+    //pacienteGordura.classList.add("info-gordura");
+    //pacienteGordura.textContent = gordura;
+    //novoPaciente.appendChild(pacienteGordura);
     
     pacientes = document.querySelectorAll('.paciente');    
     
-    calculaIMC(peso, altura)
-    renderizaIMC(imcCalculado, novoPaciente);
+    // calculaIMC(peso, altura)
+    // renderizaIMC(imcCalculado, novoPaciente);
 }
  
-function renderizaIMC (imcCalculado, novoPaciente) {
-    const pacienteIMC = document.createElement("td");
-    pacienteIMC.classList.add("info-imc");
-    pacienteIMC.textContent = imcCalculado;
-    novoPaciente.appendChild(pacienteIMC);
-}
