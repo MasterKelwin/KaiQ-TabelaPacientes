@@ -117,7 +117,6 @@ const inputNome = document.querySelector('#nome');
 const inputPeso = document.querySelector('#peso');
 const inputAltura = document.querySelector('#altura');
 const inputGordura = document.querySelector('#gorduraCorporal');
-var adicionados = 1;
 
 function adiciona () {
     var nome = inputNome.value;
@@ -125,12 +124,18 @@ function adiciona () {
     var altura = inputAltura.value;
     var gorduraCorporal = inputGordura.value;   
 
-    geraHTML(nome, peso, altura, gorduraCorporal);
-    var verificador = false;
-    if(!verificador) {
-        verificaECalcula();
-        verificador = true;
-    }   
+    if (nome == "" || peso == "" || altura == "" || gorduraCorporal == "") {
+        alert("Dados incompletos")
+    } else {
+        geraHTML(nome, peso, altura, gorduraCorporal);
+        var verificador = false;
+        if(!verificador) {
+            verificaECalcula();
+            verificador = true;
+        }   
+    }
+
+
 }
 
 function geraHTML (nome, peso, altura, gordura) {
@@ -150,7 +155,6 @@ function geraHTML (nome, peso, altura, gordura) {
     var conteudo = [nome, peso, altura, gordura];
     
     for (i = 0; i < 5; i++) {  
-        adicionados++;
         elemento[i].classList.add(propriedadeClass[i]);
 
         if (i < 4) {
@@ -205,8 +209,6 @@ function palpita(verificador) {
             alturaDOM.classList.remove('dadoInvalido');
             pesoDOM.classList.remove('dadoInvalido');
             imc.classList.remove('dadoInvalido');
-
-            corrigiu = false;     
         }
     }
     corrigiu = false;   
