@@ -4,7 +4,7 @@ var pacientes = document.querySelectorAll('.paciente');
 var imcCalculado;
 
 function calculaIMC(peso, altura) {
-    return imcCalculado = peso / (altura * altura)
+    return imcCalculado = (peso / (altura * altura)).toFixed(2);
 }
 
 function verificaECalcula () {

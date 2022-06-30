@@ -18,7 +18,7 @@ function palpita(verificador) {
             var alturaCorrigida = parseFloat((pacientesCorrigido[i].querySelector('.info-altura')).textContent);
               
             calculaIMC(pesoCorrigido, alturaCorrigida);        
-            imcCorrigido.textContent = imcCalculado.toFixed(2);
+            imcCorrigido.textContent = imcCalculado;
 
             if(imcCalculado > 18.5 && imcCalculado < 25.1){
                 pacientesCorrigido[i].classList.add('palpite-saudavel');

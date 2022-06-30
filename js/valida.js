@@ -10,7 +10,7 @@ function valida (peso, altura, imc, alturaDOM, pesoDOM) {
         pesoDOM.classList.remove('dadoInvalido');
         pesoDOM.textContent = peso;
         imc.classList.remove('dadoInvalido');
-        imc.textContent = imcCalculado.toFixed(2);
+        imc.textContent = imcCalculado;
         if (!corrigiu) {
             palpita(corrigiu);
         }
