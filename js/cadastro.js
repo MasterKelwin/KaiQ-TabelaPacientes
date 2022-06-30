@@ -5,6 +5,7 @@ const inputNome = document.querySelector('#nome');
 const inputPeso = document.querySelector('#peso');
 const inputAltura = document.querySelector('#altura');
 const inputGordura = document.querySelector('#gorduraCorporal');
+const tabela = document.querySelector('#tabela-pacientes');
 
 function adiciona () {
     var nome = inputNome.value;
@@ -18,37 +19,32 @@ function adiciona () {
         geraHTML(nome, peso, altura, gorduraCorporal);
         verificaECalcula();
     }
-
-
 }
 
 function geraHTML (nome, peso, altura, gordura) {
-    const tabela = document.querySelector('#tabela-pacientes');
+    function montaTd(dado, classe) {
+        var td = document.createElement("td");
+        td.textContent = dado;
+        td.classList.add(classe);
+        return td;
+    }      
+
     const novoPaciente = document.createElement("tr");
     novoPaciente.classList.add('paciente');
     tabela.appendChild(novoPaciente);
-    novoPaciente.classList.add('paciente');
 
-    const pacienteNome = document.createElement("td");
-    const pacientePeso = document.createElement("td");
-    const pacienteAltura = document.createElement("td");
-    const pacienteGordura = document.createElement("td");
-    const pacienteIMC = document.createElement("td");
-    var elemento = [pacienteNome, pacientePeso, pacienteAltura, pacienteGordura, pacienteIMC];
-    var propriedadeClass = ["info-nome", "info-peso", "info-altura", "info-gordura", "info-imc"];
-    var conteudo = [nome, peso, altura, gordura];
-    
-    for (i = 0; i < 5; i++) {  
-        elemento[i].classList.add(propriedadeClass[i]);
+    var tdNome = montaTd(nome, "info-nome");
+    var tdPeso = montaTd(peso, "info-peso");
+    var tdAltura = montaTd(altura, "info-altura");
+    var tdGordura = montaTd(gordura, "info-gordura");
+    calculaIMC(peso, altura);
+    var tdImc = montaTd(imcCalculado, "info-imc");
 
-        if (i < 4) {
-            elemento[i].textContent = conteudo[i]; 
-        } else {
-            calculaIMC(peso, altura);
-            elemento[i].textContent = imcCalculado;
-        }        
-        novoPaciente.appendChild(elemento[i]);  
-    }
-      
+    novoPaciente.appendChild(tdNome);
+    novoPaciente.appendChild(tdPeso);
+    novoPaciente.appendChild(tdAltura);
+    novoPaciente.appendChild(tdGordura);
+    novoPaciente.appendChild(tdImc);
+
     pacientes = document.querySelectorAll('.paciente');    
 }
