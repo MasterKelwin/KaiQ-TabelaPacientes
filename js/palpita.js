@@ -12,10 +12,13 @@ function palpita(verificador) {
     } else {
         var pacientesCorrigido = document.querySelectorAll('.errou');
         for (i = 0; i < pacientesCorrigido.length; i++) {
-
+            
+            var pesoDOM = pacientesCorrigido[i].querySelector('.info-peso');
+            var alturaDOM = pacientesCorrigido[i].querySelector('.info-altura');
             var imcCorrigido = pacientesCorrigido[i].querySelector('.info-imc');
-            var pesoCorrigido = parseFloat((pacientesCorrigido[i].querySelector('.info-peso')).textContent);
-            var alturaCorrigida = parseFloat((pacientesCorrigido[i].querySelector('.info-altura')).textContent);
+
+            var pesoCorrigido = parseFloat(pesoDOM.textContent);
+            var alturaCorrigida = parseFloat(alturaDOM.textContent);
               
             calculaIMC(pesoCorrigido, alturaCorrigida);        
             imcCorrigido.textContent = imcCalculado;
@@ -29,13 +32,9 @@ function palpita(verificador) {
                 pacientesCorrigido[i].classList.add('palpite-muito-insaudavel');
             }
 
-            var pesoDOM = pacientesCorrigido[i].querySelector('.info-peso');
-            var alturaDOM = pacientesCorrigido[i].querySelector('.info-altura');
-            var imc = pacientesCorrigido[i].querySelector('.info-imc');
-
             alturaDOM.classList.remove('dadoInvalido');
             pesoDOM.classList.remove('dadoInvalido');
-            imc.classList.remove('dadoInvalido');
+            imcCorrigido.classList.remove('dadoInvalido');
         }
     }
     corrigiu = false;   

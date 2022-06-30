@@ -14,7 +14,6 @@ function valida (peso, altura, imc, alturaDOM, pesoDOM) {
         if (!corrigiu) {
             palpita(corrigiu);
         }
-
     }
 
     if(altura < 0.5 || altura >2.9) {

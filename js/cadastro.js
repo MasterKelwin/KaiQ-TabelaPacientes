@@ -16,11 +16,7 @@ function adiciona () {
         alert("Dados incompletos")
     } else {
         geraHTML(nome, peso, altura, gorduraCorporal);
-        var verificador = false;
-        if(!verificador) {
-            verificaECalcula();
-            verificador = true;
-        }   
+        verificaECalcula();
     }
 
 
