@@ -19,6 +19,10 @@ function adiciona () {
         geraHTML(nome, peso, altura, gorduraCorporal);
         verificaECalcula();
     }
+    inputNome.value = "";
+    inputPeso.value = "";
+    inputAltura.value = "";
+    inputGordura.value = "";
 }
 
 function geraHTML (nome, peso, altura, gordura) {
