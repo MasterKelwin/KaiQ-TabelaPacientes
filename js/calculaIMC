@@ -1,4 +1,4 @@
-// CALCULA IMC
+/* CALCULA IMC */ 
 
 var pacientes = document.querySelectorAll('.paciente');
 var imcCalculado;

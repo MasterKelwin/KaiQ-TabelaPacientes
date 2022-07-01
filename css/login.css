@@ -1,0 +1,136 @@
+main {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(60deg, var(--verde-claro2), var(--verde-claro), var(--verde-claro2));
+    background-size: 400% 400%;
+    animation: background-animation 3s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-main {
+    width: 80vw;
+    height: 90vh;
+    position: absolute;
+    top: 10vh;
+}
+
+.form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vw;
+    width: 35vw;
+    background-color: var(--branco-transparente);
+    border-radius: 20px;
+}
+
+form button {
+    margin: 2em 0 0 0;
+    width: 100%;
+    height: 2em;
+    background-color: var(--verde-claro);
+    color: var(--verde-escuro);
+    border: none;
+    border-radius: 1em;
+    font-family: passion;
+    font-size: 1.2em;
+    transition: .4s ease-in-out;
+}
+
+form button:hover {
+    background-color: var(--verde-escuro3);
+    color: var(--branco);
+    cursor: pointer;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.kaiq {
+    width: 10vw;
+    position: absolute;
+    top: 20px;
+    left: 35%;
+}
+
+.querobel {
+    position: absolute;
+    width: 89px;
+    top: 330px;
+    left: 596px;
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+
+.trace1 {
+    position: absolute;
+    top: 415px;
+    left: -600px;
+    border-radius: 5px;
+    width: 710px;
+    height: 5px;
+    background-color: #0D3B66;
+    transition: 1.5s ease-in-out;
+    opacity: 0;
+}
+
+.trace2 {
+    position: absolute;
+    top: 662px;
+    left: -600px;
+    border-radius: 5px;
+    width: 800px;
+    height: 5px;
+    background-color: #0D3B66;
+    transition: 1s ease-in-out;
+    opacity: 0;
+}
+
+.trace3 {
+    position: absolute;
+    top: 662px;
+    left: 140px;
+    border-radius: 5px;
+    width: 800px;
+    height: 5px;
+    background-color: #0D3B66;
+    transition: 1s ease-in-out;
+    opacity: 0;
+}
+
+.tag {
+    position: absolute;
+    width: 600px;
+    left: 240px;
+    top: 675px;
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+
+.querobel-ativo:checked ~ .main .wrapper .querobel {
+    animation: querobel-animation 1.5s ease-in-out;
+    top: 430px;
+    opacity: 1;
+}
+
+
+
+
+@keyframes background-animation {
+    0% {
+        background-position: 0% 80%;
+    }
+    50% {
+        background-position: 80% 100%;
+    }
+    100% {
+        background-position: 0% 90%;
+    }
+}
