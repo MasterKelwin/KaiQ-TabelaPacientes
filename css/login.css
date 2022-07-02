@@ -29,7 +29,7 @@ main {
 }
 
 form button {
-    margin: 2em 0 0 0;
+    margin: 1em 0 0 0;
     width: 100%;
     height: 2em;
     background-color: var(--verde-claro);
@@ -53,10 +53,11 @@ fieldset {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    top: 140px;
     left: 58px;
 }
 
-input {
+.senha {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -75,9 +76,28 @@ input {
     font-size: 1.4em;
 }
 
-input:placeholder-shown {
+.senha:placeholder-shown {
     font-family: passion;
 }
+
+.mostraSenha {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: passion;
+    font-size: 1.2em;
+    margin-top: 0.4em;
+    color: var(--cor-base);
+    opacity: .5;
+}
+
+#mostraSenha {
+    width: 20px;
+    height: 20px;
+}
+
+
 
 .kaiq {
     width: 234px;

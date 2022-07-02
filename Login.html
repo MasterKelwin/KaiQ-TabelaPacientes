@@ -27,8 +27,11 @@
                         <img src="assets/imgs/animation/tag.png" class="tag">            
                     </div>
                     <fieldset>                   
-                        <input type="password" id="password" placeholder="Senha" autocomplete="off" required>
-
+                        <input type="password" id="password" placeholder="Senha" class="senha" autocomplete="off" required>
+                        <div class="mostraSenha">
+                            <input type="checkbox" id="mostraSenha" value="on" onclick="exibeSenha  ()">
+                            <label for="mostraSenha">Mostra Senha</label>
+                        </div>
                         <button onclick="loga()">Logar</button>
                     </fieldset>
                 </form>
