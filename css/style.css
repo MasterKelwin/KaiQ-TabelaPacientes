@@ -233,7 +233,7 @@ td, th {
 	border: 1px solid var(--verde-escuro);
 	text-align: center;
     font-size: 1.2rem;
-    color: var(--verde-escuro);
+    color: #17301c;
 }
 
 th {
