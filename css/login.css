@@ -21,10 +21,11 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vw;
-    width: 35vw;
+    height: 300px;
+    width: 350px;
     background-color: var(--branco-transparente);
     border-radius: 20px;
+    overflow: hidden;
 }
 
 form button {
@@ -47,35 +48,83 @@ form button:hover {
 }
 
 fieldset {
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    left: 58px;
+}
+
+input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 234px;
+    opacity: .5;
+    color: var(--cor-base);
+    background-color: var(--cor-secundaria);
+    font-weight: bolder;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    padding: 1.2rem .5rem .5rem;
+    height: 2.75rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    font-size: 1.4em;
+}
+
+input:placeholder-shown {
+    font-family: passion;
 }
 
 .kaiq {
-    width: 10vw;
+    width: 234px;
     position: absolute;
-    top: 20px;
-    left: 35%;
+    top: 30px;
+    left: 58px;
 }
 
 .querobel {
     position: absolute;
-    width: 89px;
-    top: 330px;
-    left: 596px;
+    width: 27px;
+    top: 14px;
+    left: 191px;
     opacity: 0;
-    transition: 1s ease-in-out;
+    transition: 1.5s ease-in-out;
+}
+
+.querobel-ativo {
+    animation: querobel-animation 1.5s ease-in-out;
+    top: 34px;
+    opacity: 1;
+}
+
+@keyframes querobel-animation {
+    0% {
+        top: 14px;
+        opacity: 0;
+    }
+
+    80% {
+        top: 36px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 34px;
+        opacity: 1;
+    }
 }
 
 .trace1 {
     position: absolute;
-    top: 415px;
-    left: -600px;
+    top: 30px;
+    left: -200px;
     border-radius: 5px;
-    width: 710px;
-    height: 5px;
+    width: 200px;
+    height: 2px;
     background-color: #0D3B66;
     transition: 1.5s ease-in-out;
     opacity: 0;
@@ -83,43 +132,52 @@ fieldset {
 
 .trace2 {
     position: absolute;
-    top: 662px;
-    left: -600px;
+    top: 103.63px;
+    left: -200px;
     border-radius: 5px;
-    width: 800px;
-    height: 5px;
+    width: 234px;
+    height: 2px;
     background-color: #0D3B66;
     transition: 1s ease-in-out;
     opacity: 0;
+}
+
+.doble-trace-ativo {
+    left: 58px;
+    opacity: 1;
 }
 
 .trace3 {
     position: absolute;
-    top: 662px;
-    left: 140px;
+    top: 102px;
+    left: 58px;
     border-radius: 5px;
-    width: 800px;
-    height: 5px;
+    width: 234px;
+    height: 2px;
     background-color: #0D3B66;
     transition: 1s ease-in-out;
     opacity: 0;
 }
 
+.trace3-ativo {
+    top: 120px;
+    opacity: 1;
+}
+
 .tag {
     position: absolute;
-    width: 600px;
-    left: 240px;
-    top: 675px;
+    width: 100px;
+    left: 125px;
+    top: 108px;
     opacity: 0;
     transition: 1s ease-in-out;
 }
 
-.querobel-ativo:checked ~ .main .wrapper .querobel {
-    animation: querobel-animation 1.5s ease-in-out;
-    top: 430px;
+.tag-ativo {
     opacity: 1;
+    width: 234px;
+    left: 58px;
 }
-
 
 
 
