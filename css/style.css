@@ -258,6 +258,7 @@ th {
 .fade-out {
     opacity: 0;
     transition: .5s;
+    display: hidden;
 }
 
 .dadoInvalido {
@@ -296,6 +297,9 @@ footer p {
     background-color: rgb(226, 70, 42);
 }
 
+.invisivel {
+    display: none;
+}
 
 
 
