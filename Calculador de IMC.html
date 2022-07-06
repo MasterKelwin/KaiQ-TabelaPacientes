@@ -58,7 +58,12 @@
                 </form>
             </section>
             <section class="wrapper-table">
-                <h2>Meus pacientes</h2>
+                <h2>Meus Alunos</h2>
+                <form onsubmit="return false" class="form-busca">
+                    <fieldset>
+                        <input type="text" id="buscaAluno" placeholder="Busque seu aluno" class="buscaAluno" autocomplete="off" onsubmit="busca()">
+                    </fieldset>
+                </form>
                 <table>
                     <thead>
                         <tr>
@@ -100,5 +105,6 @@
     <script src="js/calculaIMC"></script>
     <script src="js/cadastro.js"></script>
     <script src="js/remove.js"></script>
+    <script src="js/busca.js"></script>
 </body>
 </html>

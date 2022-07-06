@@ -7,6 +7,8 @@ const trace2 = document.querySelector('.trace2');
 const trace3 = document.querySelector('.trace3');
 const tag = document.querySelector('.tag');
 
+alert(`A senha é ${senha}`);
+
 input.focus();
 
 function exibeSenha() {
