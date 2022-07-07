@@ -324,10 +324,6 @@ footer p {
 
 
 
-
-
-
-
 @keyframes background-animation {
     0% {
         background-position: 0% 80%;
@@ -337,5 +333,13 @@ footer p {
     }
     100% {
         background-position: 0% 90%;
+    }
+}
+
+
+@media screen and (max-width: 420px) {
+    .input-container__inferior {
+        flex-direction: column;
+        width: 100%;
     }
 }
