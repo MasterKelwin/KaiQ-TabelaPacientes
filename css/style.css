@@ -100,17 +100,6 @@ a {
     align-items: center;
 }
 
-.mainAlt {
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(360deg, var(--verde-claro2), var(--verde-claro), var(--verde-claro2));
-    background-size: 400% 400%;
-    animation: background-animation 3s ease-in-out infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .wrapper-main {
     width: 80vw;
     height: 90vh;
