@@ -231,7 +231,7 @@ table {
 h2 {
     font-size: 2rem;
     font-family: Piepie;
-    margin: 0 0 2rem 0;
+    margin: 0 0 .5rem 0;
     color: var(--verde-escuro);
 }
 
@@ -302,10 +302,22 @@ footer p {
 }
 
 .busca {
-    position: absolute;
-    left: calc(100% - 200px);
     width: 200px;
-    top: 10px;
+    margin: 0 0 2em 0;
+    height: 1.2em;
+    background-color: var(--branco);
+    color: var(--verde-escuro3);
+    border: none;
+    border-radius: 1em;
+    font-family: passion;
+    font-size: 1.2em;
+    transition: .4s ease-in-out;
+}
+
+.busca:hover {
+    background-color: var(--verde-escuro3);
+    color: var(--branco);
+    cursor: pointer;
 }
 
 
