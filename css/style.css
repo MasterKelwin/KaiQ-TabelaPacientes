@@ -21,6 +21,7 @@ body::-webkit-scrollbar-thumb{
     left: 2vw;
     width: 6vw;
     height: 2em;
+    line-height: .8;
     background-color: var(--branco);
     color: var(--verde-escuro2);
     border: none;
@@ -88,10 +89,21 @@ a {
 
 }
 
-main {
+.main {
     height: 100vh;
     width: 100vw;
     background: linear-gradient(60deg, var(--verde-claro2), var(--verde-claro), var(--verde-claro2));
+    background-size: 400% 400%;
+    animation: background-animation 3s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainAlt {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(360deg, var(--verde-claro2), var(--verde-claro), var(--verde-claro2));
     background-size: 400% 400%;
     animation: background-animation 3s ease-in-out infinite;
     display: flex;
@@ -109,6 +121,7 @@ main {
 .wrapper-form {
     background-color: var(--branco);
     height: 35%;
+    min-height: 265.5px;
     width: 100%;
     display: flex;
     flex-direction: column;

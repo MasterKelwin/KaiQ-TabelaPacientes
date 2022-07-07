@@ -14,6 +14,7 @@ botaoBusca.addEventListener("click", function() {
             var resposta = xhr.responseText;
 
             var aluno = JSON.parse(resposta);
+            
 
             aluno.forEach(function(aluno){
                 var nome = aluno.nome;
@@ -36,7 +37,9 @@ botaoBusca.addEventListener("click", function() {
             
                 palpitaImportado(imcCalculado);
 
+                
             });
+            atualizaView(aluno.length);
         } else {
             alert("O servidor não foi encontrado, tente novamente mais tarde")
         }
