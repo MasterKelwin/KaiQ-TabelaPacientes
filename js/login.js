@@ -23,7 +23,7 @@ function loga() {
     if (input.value == senha) {
         animacaoKaiQ();
     } else {
-        alert("senha incorreta")
+        alert(`Senha incorreta, o certo é: ${senha}`);
     }
 }
 

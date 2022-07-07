@@ -303,8 +303,9 @@ footer p {
 
 .busca {
     position: absolute;
-    bottom: 10vh;
-    left: 40vw;
+    left: calc(100% - 200px);
+    width: 200px;
+    top: 10px;
 }
 
 
