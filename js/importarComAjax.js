@@ -1,7 +1,7 @@
 var botaoBusca = document.querySelector('#busca');
 
 botaoBusca.addEventListener("click", function() {
-    console.log("buscando pacientes");
+    console.log("buscando alunos");
 
     var xhr = new XMLHttpRequest();
 

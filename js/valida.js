@@ -21,7 +21,7 @@ function valida (peso, altura, imc, alturaDOM, pesoDOM) {
         alturaDOM.textContent = "Altura Inválida";
         alturaDOM.classList.add('dadoInvalido');
         imc.classList.add('dadoInvalido');
-        pacientes[i].classList.add('errou');
+        alunos[i].classList.add('errou');
 
         setTimeout(() => {  //RESPONSÁVEL POR CORRIGIR
             var alturaCorrigida = parseFloat(prompt("Altura inválida, informe novamente. Digite '.' ao invés de ','"));
@@ -37,7 +37,7 @@ function valida (peso, altura, imc, alturaDOM, pesoDOM) {
         pesoDOM.textContent = "Peso Inválido";
         pesoDOM.classList.add('dadoInvalido');
         imc.classList.add('dadoInvalido');
-        pacientes[i].classList.add('errou');
+        alunos[i].classList.add('errou');
 
         setTimeout(() => {  //RESPONSÁVEL POR CORRIGIR
             var pesoCorrigido = parseFloat(prompt("Peso inválido, informe novamente. Digite '.' ao invés de ','"));

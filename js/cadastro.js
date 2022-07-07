@@ -5,7 +5,7 @@ const inputNome = document.querySelector('#nome');
 const inputPeso = document.querySelector('#peso');
 const inputAltura = document.querySelector('#altura');
 const inputGordura = document.querySelector('#gorduraCorporal');
-const tabela = document.querySelector('#tabela-pacientes');
+const tabela = document.querySelector('#tabela-alunos');
 
 function adiciona () {
     var nome = inputNome.value;
@@ -33,9 +33,9 @@ function geraHTML (nome, peso, altura, gordura) {
         return td;
     }      
 
-    const novoPaciente = document.createElement("tr");
-    novoPaciente.classList.add('paciente');
-    tabela.appendChild(novoPaciente);
+    const novoAluno = document.createElement("tr");
+    novoAluno.classList.add('aluno');
+    tabela.appendChild(novoAluno);
 
     var tdNome = montaTd(nome, "info-nome");
     var tdPeso = montaTd(peso, "info-peso");
@@ -45,12 +45,12 @@ function geraHTML (nome, peso, altura, gordura) {
 
     var tdImc = montaTd(imcCalculado, "info-imc");
 
-    novoPaciente.appendChild(tdNome);
-    novoPaciente.appendChild(tdPeso);
-    novoPaciente.appendChild(tdAltura);
-    novoPaciente.appendChild(tdGordura);
-    novoPaciente.appendChild(tdImc);
+    novoAluno.appendChild(tdNome);
+    novoAluno.appendChild(tdPeso);
+    novoAluno.appendChild(tdAltura);
+    novoAluno.appendChild(tdGordura);
+    novoAluno.appendChild(tdImc);
 
-    pacientes = document.querySelectorAll('.paciente');   
-    return alunoGerado = novoPaciente;
+    alunos = document.querySelectorAll('.aluno');   
+    return alunoGerado = novoAluno;
 }

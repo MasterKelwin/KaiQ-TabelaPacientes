@@ -1,7 +1,7 @@
 var campoBusca = document.querySelector('#buscaAluno');
 
 campoBusca.addEventListener('input', () => {
-    var alunos = document.querySelectorAll('.paciente');
+    var alunos = document.querySelectorAll('.aluno');
     if(campoBusca.value.length > 0) {
         for (i = 0; i < alunos.length; i++) {
             var aluno = alunos[i];

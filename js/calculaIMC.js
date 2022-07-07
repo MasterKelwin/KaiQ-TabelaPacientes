@@ -1,4 +1,4 @@
-var pacientes = document.querySelectorAll('.paciente');
+var alunos = document.querySelectorAll('.aluno');
 var imcCalculado;
 
 function calculaIMC(peso, altura) {
@@ -6,13 +6,13 @@ function calculaIMC(peso, altura) {
 }
 
 function verificaECalcula () {
-    for (i = 0; i < pacientes.length; i++) {
-        var pesoDOM = pacientes[i].querySelector('.info-peso');
-        var alturaDOM = pacientes[i].querySelector('.info-altura');
+    for (i = 0; i < alunos.length; i++) {
+        var pesoDOM = alunos[i].querySelector('.info-peso');
+        var alturaDOM = alunos[i].querySelector('.info-altura');
     
         var peso = parseFloat(pesoDOM.textContent);
         var altura = parseFloat(alturaDOM.textContent);
-        var imc = pacientes[i].querySelector('.info-imc');
+        var imc = alunos[i].querySelector('.info-imc');
         
         valida(peso, altura, imc, alturaDOM, pesoDOM);       
     }
