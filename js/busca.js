@@ -20,5 +20,4 @@ campoBusca.addEventListener('input', () => {
             alunos[i].classList.remove('invisivel');
         }
     }
-    
 });

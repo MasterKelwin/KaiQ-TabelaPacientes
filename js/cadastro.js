@@ -42,6 +42,7 @@ function geraHTML (nome, peso, altura, gordura) {
     var tdAltura = montaTd(altura, "info-altura");
     var tdGordura = montaTd(gordura, "info-gordura");
     calculaIMC(peso, altura);
+
     var tdImc = montaTd(imcCalculado, "info-imc");
 
     novoPaciente.appendChild(tdNome);
@@ -50,5 +51,6 @@ function geraHTML (nome, peso, altura, gordura) {
     novoPaciente.appendChild(tdGordura);
     novoPaciente.appendChild(tdImc);
 
-    pacientes = document.querySelectorAll('.paciente');    
+    pacientes = document.querySelectorAll('.paciente');   
+    return alunoGerado = novoPaciente;
 }

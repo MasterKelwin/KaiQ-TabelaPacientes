@@ -301,6 +301,12 @@ footer p {
     display: none;
 }
 
+.busca {
+    position: absolute;
+    bottom: 10vh;
+    left: 40vw;
+}
+
 
 
 
