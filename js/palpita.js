@@ -10,15 +10,15 @@ function palpita(verificador) {
             alunos[i].classList.add('palpite-muito-insaudavel');
         }
     } else {
-        var alunosCorrigido = document.querySelectorAll('.errou');
+        let alunosCorrigido = document.querySelectorAll('.errou');
         for (i = 0; i < alunosCorrigido.length; i++) {
             
-            var pesoDOM = alunosCorrigido[i].querySelector('.info-peso');
-            var alturaDOM = alunosCorrigido[i].querySelector('.info-altura');
-            var imcCorrigido = alunosCorrigido[i].querySelector('.info-imc');
+            let pesoDOM = alunosCorrigido[i].querySelector('.info-peso');
+            let alturaDOM = alunosCorrigido[i].querySelector('.info-altura');
+            let imcCorrigido = alunosCorrigido[i].querySelector('.info-imc');
 
-            var pesoCorrigido = parseFloat(pesoDOM.textContent);
-            var alturaCorrigida = parseFloat(alturaDOM.textContent);
+            let pesoCorrigido = parseFloat(pesoDOM.textContent);
+            let alturaCorrigida = parseFloat(alturaDOM.textContent);
               
             calculaIMC(pesoCorrigido, alturaCorrigida);        
             imcCorrigido.textContent = imcCalculado;

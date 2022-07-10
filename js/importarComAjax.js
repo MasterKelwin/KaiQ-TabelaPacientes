@@ -11,16 +11,16 @@ botaoBusca.addEventListener("click", function() {
 
     xhr.addEventListener("load", function(){
         if (xhr.status == 200) {
-            var resposta = xhr.responseText;
+            let resposta = xhr.responseText;
 
-            var aluno = JSON.parse(resposta);
+            let aluno = JSON.parse(resposta);
             
 
             aluno.forEach(function(aluno){
-                var nome = aluno.nome;
-                var peso = aluno.peso;
-                var altura = aluno.altura;
-                var gordura = aluno.gordura;
+                let nome = aluno.nome;
+                let peso = aluno.peso;
+                let altura = aluno.altura;
+                let gordura = aluno.gordura;
             
                 geraHTML(nome, peso, altura, gordura);   
                 calculaIMC(peso, altura);

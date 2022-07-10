@@ -8,10 +8,10 @@ const inputGordura = document.querySelector('#gorduraCorporal');
 const tabela = document.querySelector('#tabela-alunos');
 
 function adiciona () {
-    var nome = inputNome.value;
-    var peso = inputPeso.value;
-    var altura = inputAltura.value;
-    var gorduraCorporal = inputGordura.value;   
+    let nome = inputNome.value;
+    let peso = inputPeso.value;
+    let altura = inputAltura.value;
+    let gorduraCorporal = inputGordura.value;   
 
     if (nome == "" || peso == "" || altura == "" || gorduraCorporal == "") {
         alert("Dados incompletos")
@@ -30,7 +30,7 @@ function adiciona () {
 
 function geraHTML (nome, peso, altura, gordura) {
     function montaTd(dado, classe) {
-        var td = document.createElement("td");
+        let td = document.createElement("td");
         td.textContent = dado;
         td.classList.add(classe);
         return td;
@@ -40,13 +40,13 @@ function geraHTML (nome, peso, altura, gordura) {
     novoAluno.classList.add('aluno');
     tabela.appendChild(novoAluno);
 
-    var tdNome = montaTd(nome, "info-nome");
-    var tdPeso = montaTd(peso, "info-peso");
-    var tdAltura = montaTd(altura, "info-altura");
-    var tdGordura = montaTd(gordura, "info-gordura");
+    let tdNome = montaTd(nome, "info-nome");
+    let tdPeso = montaTd(peso, "info-peso");
+    let tdAltura = montaTd(altura, "info-altura");
+    let tdGordura = montaTd(gordura, "info-gordura");
     calculaIMC(peso, altura);
 
-    var tdImc = montaTd(imcCalculado, "info-imc");
+    let tdImc = montaTd(imcCalculado, "info-imc");
 
     novoAluno.appendChild(tdNome);
     novoAluno.appendChild(tdPeso);

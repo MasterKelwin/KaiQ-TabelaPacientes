@@ -344,4 +344,8 @@ footer p {
         flex-direction: column;
         width: 100%;
     }
+
+    .trocaTema {
+        display: none;
+    }
 }
