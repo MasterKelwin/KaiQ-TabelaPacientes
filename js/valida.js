@@ -25,6 +25,11 @@ function valida (peso, altura, imc, alturaDOM, pesoDOM, aluno) {
 
         setTimeout(() => {  //RESPONSÁVEL POR CORRIGIR
             let alturaCorrigida = parseFloat(prompt("Altura inválida, informe novamente. Digite '.' ao invés de ','"));
+            console.log(alturaCorrigida)
+            while(alturaCorrigida < 0.5 || alturaCorrigida > 3) {
+                let novaAltura = parseFloat(prompt("Altura inválida, informe novamente. Digite '.' ao invés de ','"));
+                alturaCorrigida = novaAltura;
+            }
             calculaIMC(peso, alturaCorrigida);
             alturaDOM.textContent = alturaCorrigida;
             corrigiu = true;
@@ -41,6 +46,10 @@ function valida (peso, altura, imc, alturaDOM, pesoDOM, aluno) {
 
         setTimeout(() => {  //RESPONSÁVEL POR CORRIGIR
             let pesoCorrigido = parseFloat(prompt("Peso inválido, informe novamente. Digite '.' ao invés de ','"));
+            while(pesoCorrigido <= 0 || pesoCorrigido > 400) {
+                let novoPeso = parseFloat(prompt("Peso inválido, informe novamente. Digite '.' ao invés de ','"));
+                pesoCorrigido = novoPeso;
+            }
             calculaIMC(pesoCorrigido, altura);
             pesoDOM.textContent = pesoCorrigido;
             corrigiu = true;
