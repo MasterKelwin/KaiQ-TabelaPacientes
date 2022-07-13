@@ -1,41 +1,30 @@
 // PALPITA
 
-function palpita(verificador) {
-    if(!verificador) {
-        if(imcCalculado > 18.5 && imcCalculado < 25.1){
-            alunos[i].classList.add('palpite-saudavel');
-        } else if(imcCalculado > 15 && imcCalculado < 30) {
-            alunos[i].classList.add('palpite-insaudavel');
-        } else {
-            alunos[i].classList.add('palpite-muito-insaudavel');
-        }
+function avaliaIMC (aluno) {
+    if(imcCalculado > 18.5 && imcCalculado < 25.1){
+        aluno.classList.add('palpite-saudavel');
+    } else if(imcCalculado > 15 && imcCalculado < 30) {
+        aluno.classList.add('palpite-insaudavel');
     } else {
-        let alunosCorrigido = document.querySelectorAll('.errou');
-        for (i = 0; i < alunosCorrigido.length; i++) {
-            
-            let pesoDOM = alunosCorrigido[i].querySelector('.info-peso');
-            let alturaDOM = alunosCorrigido[i].querySelector('.info-altura');
-            let imcCorrigido = alunosCorrigido[i].querySelector('.info-imc');
-
-            let pesoCorrigido = parseFloat(pesoDOM.textContent);
-            let alturaCorrigida = parseFloat(alturaDOM.textContent);
-              
-            calculaIMC(pesoCorrigido, alturaCorrigida);        
-            imcCorrigido.textContent = imcCalculado;
-
-            if(imcCalculado > 18.5 && imcCalculado < 25.1){
-                alunosCorrigido[i].classList.add('palpite-saudavel');
-                
-            } else if(imcCalculado > 15 && imcCalculado < 30) {
-                alunosCorrigido[i].classList.add('palpite-insaudavel');
-            } else {
-                alunosCorrigido[i].classList.add('palpite-muito-insaudavel');
-            }
-
-            alturaDOM.classList.remove('dadoInvalido');
-            pesoDOM.classList.remove('dadoInvalido');
-            imcCorrigido.classList.remove('dadoInvalido');
-        }
+        aluno.classList.add('palpite-muito-insaudavel');
     }
-    corrigiu = false;   
 }
+
+function palpita(corrigiu, aluno) {
+    if(!corrigiu) {
+        avaliaIMC(aluno);
+    } else {
+        document.querySelectorAll('.errou').forEach(aluno => {
+            let pesoCorrigido = parseFloat(aluno.querySelector('.info-peso').textContent);
+            let alturaCorrigida = parseFloat(aluno.querySelector('.info-altura').textContent);
+            calculaIMC(pesoCorrigido, alturaCorrigida);  
+            aluno.querySelector('.info-imc').textContent = imcCalculado                  
+
+            avaliaIMC(aluno);
+            aluno.querySelector('.info-peso').classList.remove('dadoInvalido');
+            aluno.querySelector('.info-altura').classList.remove('dadoInvalido');
+            aluno.querySelector('.info-imc').classList.remove('dadoInvalido');
+            corrigiu = false;   
+        })}
+}
+

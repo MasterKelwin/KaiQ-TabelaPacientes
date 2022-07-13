@@ -1,17 +1,12 @@
 // CADASTRA ALUNO
 
-var formulario = document.querySelector('#form');
-const inputNome = document.querySelector('#nome');
-const inputPeso = document.querySelector('#peso');
-const inputAltura = document.querySelector('#altura');
-const inputGordura = document.querySelector('#gorduraCorporal');
 const tabela = document.querySelector('#tabela-alunos');
 
 function adiciona () {
-    let nome = inputNome.value;
-    let peso = inputPeso.value;
-    let altura = inputAltura.value;
-    let gorduraCorporal = inputGordura.value;   
+    let nome = document.querySelector('#nome').value;
+    let peso = document.querySelector('#peso').value;
+    let altura = document.querySelector('#altura').value;
+    let gorduraCorporal = document.querySelector('#gorduraCorporal').value; 
 
     if (nome == "" || peso == "" || altura == "" || gorduraCorporal == "") {
         alert("Dados incompletos")
@@ -19,13 +14,9 @@ function adiciona () {
         geraHTML(nome, peso, altura, gorduraCorporal);
         verificaECalcula();
         atualizaView(0);
+        limpaForm();
         view++
     }
-    inputNome.value = "";
-    inputPeso.value = "";
-    inputAltura.value = "";
-    inputGordura.value = "";
-
 }
 
 function geraHTML (nome, peso, altura, gordura) {
@@ -45,15 +36,17 @@ function geraHTML (nome, peso, altura, gordura) {
     let tdAltura = montaTd(altura, "info-altura");
     let tdGordura = montaTd(gordura, "info-gordura");
     calculaIMC(peso, altura);
-
     let tdImc = montaTd(imcCalculado, "info-imc");
+    let dados = [tdNome, tdPeso, tdAltura, tdGordura, tdImc];
 
-    novoAluno.appendChild(tdNome);
-    novoAluno.appendChild(tdPeso);
-    novoAluno.appendChild(tdAltura);
-    novoAluno.appendChild(tdGordura);
-    novoAluno.appendChild(tdImc);
-
+    dados.forEach(f => novoAluno.appendChild(f));
     alunos = document.querySelectorAll('.aluno');   
     return alunoGerado = novoAluno;
+}
+
+function limpaForm() {
+    nome = "";
+    peso = "";
+    altura = "";
+    gorduraCorporal = "";
 }
